@@ -1,7 +1,13 @@
+// Global
+import Home from "./pages/Home";
+
+// Styles
+import "./global.css";
+
 function App() {
   return (
     <div className="App">
-      <h1>Dash RC</h1>
+      <Home />
     </div>
   );
 }
