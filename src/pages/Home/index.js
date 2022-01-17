@@ -1,8 +1,6 @@
 // Global
 import React from "react";
-import CardMsp from "../../components/CardMsp";
-import Card3cx from "../../components/Card3cx";
-import CardWpp from "../../components/CardWpp";
+import Analist from "../../components/Analist";
 
 // Styles
 import "./styles.css";
@@ -10,10 +8,7 @@ import "./styles.css";
 export default function Home() {
   return (
     <div className="containerHome">
-      <h1>Home</h1>
-      <CardMsp />
-      <Card3cx />
-      <CardWpp />
+      <Analist />
     </div>
   );
 }
