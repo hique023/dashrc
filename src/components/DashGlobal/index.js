@@ -9,16 +9,15 @@ import "./styles.css";
 export default function Home() {
   return (
     <div className="containerDashGlobal">
-      <CardGlobal />
-      <CardGlobal />
-      <CardGlobal />
-      <CardGlobal />
-      {/* <h1>Total de Ligações:</h1>
-      <h1>Total de Wpp:</h1>
-      <h1>Total de Acessos:</h1>
-      <div className="dashGlobalImg">
-        <img src={Logo} alt="Logo de dash" />
-      </div> */}
+      {/* <h1>Dashboard RC</h1> */}
+      <div className="contentDashGlobal">
+        <CardGlobal title="Ligações" value="100" />
+        <CardGlobal title="Wpp" value="30" />
+        <CardGlobal title="Acessos" value="25" />
+        <div className="dashGlobalImg">
+          <img src={Logo} alt="Logo de dash" />
+        </div>
+      </div>
     </div>
   );
 }
