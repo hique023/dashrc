@@ -1,0 +1,28 @@
+.containerDashGlobal {
+  height: 100vh;
+  width: 90%;
+  padding: 200px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: -50px;
+}
+
+/* .containerDashGlobal h1 {
+  background-color: rgb(157, 157, 157);
+  border-radius: 10px;
+  padding: 20px;
+  height: 400px;
+}
+
+.containerDashGlobal .dashGlobalImg {
+  height: 350px;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerDashGlobal .dashGlobalImg img {
+  height: 400px;
+} */
