@@ -9,6 +9,27 @@ export default function Home() {
   return (
     <div className="containerHome">
       <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
+      <Analist />
     </div>
   );
 }

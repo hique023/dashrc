@@ -1,0 +1,9 @@
+.containerCard {
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #464646;
+
+  width: 350px;
+}

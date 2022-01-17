@@ -9,11 +9,11 @@ import "./styles.css";
 
 export default function Analist() {
   return (
-    <div className="containerCard">
+    <div className="containerAnalist">
       <h1>Analist</h1>
-      <CardMsp />
       <Card3cx />
       <CardWpp />
+      <CardMsp />
     </div>
   );
 }
