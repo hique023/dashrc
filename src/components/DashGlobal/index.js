@@ -16,24 +16,27 @@ export default function Home() {
       <div className="contentDashGlobal">
         <CardGlobal
           title="Ligações"
-          value="100"
+          finishedTotal="100"
           icon={<BsFillTelephoneFill size={60} />}
-          attendance="3"
-          finished="22"
+          attendanceTotal="3"
+          finishedTotal="22"
+          loggedTotal="15"
         />
         <CardGlobal
           title="Chats"
-          value="30"
+          finishedTotal="30"
           icon={<IoLogoWhatsapp size={60} />}
-          attendance="2"
-          finished="20"
+          attendanceTotal="2"
+          finishedTotal="20"
+          loggedTotal="5"
         />
         <CardGlobal
           title="Acessos"
-          value="25"
+          finishedTotal="25"
           icon={<RiComputerFill size={60} />}
-          attendance="4"
-          finished="25"
+          attendanceTotal="4"
+          finishedTotal="25"
+          loggedTotal="8"
         />
         <div className="dashGlobalImg">
           <img src={Logo} alt="Logo de dash" />
