@@ -24,12 +24,14 @@
 } */
 
 .containerDashGlobal .dashGlobalImg {
-  height: 400px;
+  /* height: 400px;
+  max-width: 150px; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .containerDashGlobal .dashGlobalImg img {
-  max-height: 395px;
+  max-width: 450px;
+  min-width: 200px;
 }
