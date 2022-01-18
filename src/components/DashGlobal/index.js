@@ -1,7 +1,7 @@
 // Global
 import React from "react";
 import CardGlobal from "../CardGlobal";
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/logoDash.png";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { RiComputerFill } from "react-icons/ri";
