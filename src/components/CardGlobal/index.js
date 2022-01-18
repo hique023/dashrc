@@ -1,6 +1,5 @@
 // Global
 import React from "react";
-import { BsFillTelephoneFill } from "react-icons/bs";
 
 // Styles
 import "./styles.css";
