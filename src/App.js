@@ -1,5 +1,5 @@
 // Global
-import Home from "./pages/Home";
+import Routes from "./routes.js";
 
 // Styles
 import "./global.css";
@@ -7,7 +7,7 @@ import "./global.css";
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Routes />
     </div>
   );
 }
