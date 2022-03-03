@@ -43,12 +43,10 @@ export default function Home() {
       <DashGlobal />
 
       {user.data.map((item, key) => (
-        <div className="containerAnalist" key={key}>
-          <Analist
-            name={item.name}
-            email={item.email}
-            // active={item.active}
-          />
+        <div className="analistContent" key={key}>
+          {item.active === true && (
+            <Analist name={item.name} email={item.email} active={item.active} />
+          )}
         </div>
       ))}
     </div>
