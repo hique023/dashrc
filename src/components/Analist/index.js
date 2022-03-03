@@ -7,10 +7,10 @@ import CardWpp from "../../components/CardWpp";
 // Styles
 import "./styles.css";
 
-export default function Analist() {
+export default function Analist(props) {
   return (
     <div className="containerAnalist">
-      <h1>Analist</h1>
+      <h1 className="nameAnalist">{props.name}</h1>
       <Card3cx
         attendanceAnalist3cx="4"
         abandonedAnalist3cx="0"

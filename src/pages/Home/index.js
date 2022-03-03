@@ -46,7 +46,7 @@ export default function Home() {
         <div className="containerAnalist" key={key}>
           <Analist
             name={item.name}
-            // email={item.email}
+            email={item.email}
             // active={item.active}
           />
         </div>
