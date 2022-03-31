@@ -4,11 +4,15 @@ import DashGlobal from "../../components/DashGlobal";
 import Analist from "../../components/Analist";
 import firebase from "../../firebaseConfig.js";
 
+import axios from "axios";
+
 // Styles
 import "./styles.css";
 
 export default function Home() {
   const [user, setUser] = useState({ data: [] });
+  const [mspData, setMspData] = useState({ data: {} });
+  const [totalMsp, setTotalMsp] = useState();
 
   const db = firebase.firestore();
 
@@ -34,13 +38,39 @@ export default function Home() {
       });
   }
 
+  async function getMsp() {
+    axios
+      .get("https://backdashrc.herokuapp.com/msp")
+      .then((response) => {
+        setMspData(response.data);
+        setTotalMsp(response.data.nrequests);
+        console.log(mspData);
+        console.log(totalMsp);
+      })
+      .catch((error) => {
+        console.error(error);
+        console.log("Deu errado");
+      });
+  }
+
   useEffect(() => {
     getUser();
+    getMsp();
   }, []);
 
   return (
     <div className="containerHome">
-      <DashGlobal />
+      <DashGlobal
+        totalCall3cx="0"
+        attendanceTotal3cx="--"
+        loggedTotal3cx="--"
+        totalCallWpp="0"
+        attendanceTotalWpp="--"
+        loggedTotalWpp="--"
+        totalSessionMsp={totalMsp}
+        attendanceTotalMsp="--"
+        loggedTotalMsp="--"
+      />
 
       {user.data.map((item, key) => (
         <div className="analistContent" key={key}>

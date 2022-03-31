@@ -9,34 +9,34 @@ import { RiComputerFill } from "react-icons/ri";
 // Styles
 import "./styles.css";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className="containerDashGlobal">
       {/* <h1>Dashboard RC</h1> */}
       <div className="contentDashGlobal">
         <CardGlobal
           title="Ligações"
-          finishedTotal="100"
+          finishedTotal={props.totalCall3cx}
           icon={<BsFillTelephoneFill size={60} />}
-          attendanceTotal="3"
-          finishedTotal="22"
-          loggedTotal="15"
+          attendanceTotal={props.attendanceTotal3cx}
+          // finishedTotal="22"
+          loggedTotal={props.loggedTotal3cx}
         />
         <CardGlobal
           title="Chats"
-          finishedTotal="30"
+          finishedTotal={props.totalCallWpp}
           icon={<IoLogoWhatsapp size={60} />}
-          attendanceTotal="2"
-          finishedTotal="20"
-          loggedTotal="5"
+          attendanceTotal={props.attendanceTotalWpp}
+          // finishedTotal="20"
+          loggedTotal={props.loggedTotalWpp}
         />
         <CardGlobal
           title="Acessos"
-          finishedTotal="25"
+          finishedTotal={props.totalSessionMsp}
           icon={<RiComputerFill size={60} />}
-          attendanceTotal="4"
-          finishedTotal="25"
-          loggedTotal="8"
+          attendanceTotal={props.attendanceTotalMsp}
+          // finishedTotal="25"
+          loggedTotal={props.loggedTotalMsp}
         />
         <div className="dashGlobalImg">
           <img src={Logo} alt="Logo de dash" />

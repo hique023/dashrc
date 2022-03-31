@@ -18,7 +18,7 @@ export default function Analist(props) {
   }
 
   useEffect(() => {
-    testActive();
+    // testActive();
   }, []);
 
   return (
