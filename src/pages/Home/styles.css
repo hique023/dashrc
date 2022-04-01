@@ -18,3 +18,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.loadingStyle {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

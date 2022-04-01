@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import DashGlobal from "../../components/DashGlobal";
 import Analist from "../../components/Analist";
 import firebase from "../../firebaseConfig.js";
-
 import axios from "axios";
+
+// assets
+import loading from "../../assets/loading.gif";
 
 // Styles
 import "./styles.css";
@@ -13,6 +15,8 @@ export default function Home() {
   const [user, setUser] = useState({ data: [] });
   const [mspData, setMspData] = useState({ data: {} });
   const [totalMsp, setTotalMsp] = useState();
+
+  const [loadingMsp, setLoadingMsp] = useState(true);
 
   const db = firebase.firestore();
 
@@ -44,6 +48,7 @@ export default function Home() {
       .then((response) => {
         setMspData(response.data);
         setTotalMsp(response.data.nrequests);
+        setLoadingMsp(false);
         console.log(mspData);
         console.log(totalMsp);
       })
@@ -58,6 +63,14 @@ export default function Home() {
     getMsp();
   }, []);
 
+  if (loadingMsp) {
+    return (
+      <div className="loadingStyle">
+        <img src={loading} alt="Blocos girando sinalizando um carregamento" />
+      </div>
+    );
+  }
+
   return (
     <div className="containerHome">
       <DashGlobal
@@ -68,6 +81,7 @@ export default function Home() {
         attendanceTotalWpp="--"
         loggedTotalWpp="--"
         totalSessionMsp={totalMsp}
+        // loadingMspData={loadingMsp}
         attendanceTotalMsp="--"
         loggedTotalMsp="--"
       />

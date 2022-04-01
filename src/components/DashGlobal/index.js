@@ -37,6 +37,7 @@ export default function Home(props) {
           attendanceTotal={props.attendanceTotalMsp}
           // finishedTotal="25"
           loggedTotal={props.loggedTotalMsp}
+          // loadingMspData={props.loadingMspData}
         />
         <div className="dashGlobalImg">
           <img src={Logo} alt="Logo de dash" />
