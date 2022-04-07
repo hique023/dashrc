@@ -13,12 +13,21 @@ import "./styles.css";
 
 export default function Home() {
   const [user, setUser] = useState({ data: [] });
-  const [mspData, setMspData] = useState({ data: {} });
-  const [totalMsp, setTotalMsp] = useState();
 
+  const [mspData, setMspData] = useState({ data: [] });
+  const [totalMsp, setTotalMsp] = useState();
+  const [atendanceMsp, setAtendanceMsp] = useState();
   const [loadingMsp, setLoadingMsp] = useState(true);
 
+  const [currentYear, setCurrentYear] = useState();
+  const [currentMonth, setCurrentMonth] = useState();
+  const [currentDay, setCurrentDay] = useState();
+  const [currentHour, setCurrentHour] = useState();
+  const [currentMinutes, setCurrentMinutes] = useState();
+  const [currentSeconds, setCurrentSeconds] = useState();
+
   const db = firebase.firestore();
+  const date = new Date();
 
   function getUser() {
     const count = [];
@@ -43,25 +52,61 @@ export default function Home() {
   }
 
   async function getMsp() {
-    axios
+    await axios
       .get("https://backdashrc.herokuapp.com/msp")
       .then((response) => {
-        setMspData(response.data);
+        setMspData(response.data.requests);
         setTotalMsp(response.data.nrequests);
         setLoadingMsp(false);
-        console.log(mspData);
-        console.log(totalMsp);
+        // console.log(response.data.requests);
+        // console.log(mspData);
       })
       .catch((error) => {
         console.error(error);
-        console.log("Deu errado");
+        console.log("Erro ao consultar MSP");
       });
+  }
+
+  function mspDataLog() {
+    for (var index = 0; index < mspData.length; index++) {
+      // console.log("Texto");
+      console.log(mspData[index].tech_username);
+      console.log(mspData[index].date_start);
+    }
+
+    console.log("mspDataLog em execução");
+    console.log(mspData);
+    console.log(typeof mspData[0]);
+    // console.log(mspData.requests[2].tech_username);
+  }
+
+  function getDate() {
+    setCurrentYear(String(date.getFullYear()));
+    setCurrentDay(String(date.getDate()).padStart(2, "0"));
+    setCurrentMonth(String(date.getMonth() + 1).padStart(2, "0"));
+    setCurrentHour(String(date.getHours()).padStart(2, "0")); // 0-23
+    setCurrentMinutes(String(date.getMinutes()).padStart(2, "0")); // 0-59
+    setCurrentSeconds(String(date.getSeconds()).padStart(2, "0"));
+    // console.log(`${currentDay}/${currentMonth}/${currentYear}`);
+    // console.log(`${currentHour}:${currentMinutes}:${currentSeconds}`);
+    // console.log("getDate()");
   }
 
   useEffect(() => {
     getUser();
     getMsp();
+    getDate();
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      getDate();
+    }, 1000);
+  });
+
+  useEffect(() => {
+    mspDataLog();
+  }, [mspData]);
 
   if (loadingMsp) {
     return (
@@ -73,6 +118,13 @@ export default function Home() {
 
   return (
     <div className="containerHome">
+      <h1>
+        {currentHour}:{currentMinutes}:{currentSeconds}
+      </h1>
+      <h1>
+        {currentDay}/{currentMonth}/{currentYear}
+      </h1>
+
       <DashGlobal
         totalCall3cx="0"
         attendanceTotal3cx="--"
