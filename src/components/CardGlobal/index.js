@@ -21,11 +21,11 @@ export default function CardGlobal(props) {
     <div className="CardGlobal">
       <div className="iconChanel">{props.icon}</div>
       <div className="contentCardGlobal">
-        <h1>Total de {props.title}</h1>
-        <h2>{props.finishedTotal}</h2>
-        <h3>Em atendimento: {props.attendanceTotal}</h3>
-        {/* <h3>Finalizados: {props.finishedTotal}</h3> */}
-        <h3>Agentes logados: {props.loggedTotal}</h3>
+        <h1>{props.title} em atendimento</h1>
+        <h2>{props.attendanceTotal}</h2>
+        <h3>Em fila: {props.pending}</h3>
+        <h3>Finalizados: {props.finishedTotal}</h3>
+        {/* <h3>Agentes logados: {props.loggedTotal}</h3> */}
       </div>
     </div>
     // )}

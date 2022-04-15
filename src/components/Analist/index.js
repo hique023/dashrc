@@ -25,19 +25,19 @@ export default function Analist(props) {
     <div className="containerAnalist">
       <h1 className="nameAnalist">{props.name}</h1>
       <Card3cx
-        attendanceAnalist3cx="4"
-        abandonedAnalist3cx="0"
-        activeAnalist3cx={true}
+        attendanceAnalist3cx="--"
+        abandonedAnalist3cx="--"
+        activeAnalist3cx={false}
       />
       <CardWpp
-        attendanceAnalistWpp="0"
-        abandonedAnalistWpp="0"
+        attendanceAnalistWpp="--"
+        abandonedAnalistWpp="--"
         activeAnalistWpp={false}
       />
       <CardMsp
-        attendanceAnalistMsp="8"
-        abandonedAnalistMsp="0"
-        activeAnalistMsp={true}
+        attendanceAnalistMsp="--"
+        abandonedAnalistMsp="--"
+        activeAnalistMsp={false}
       />
     </div>
   );

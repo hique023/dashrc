@@ -16,28 +16,27 @@ export default function Home(props) {
       <div className="contentDashGlobal">
         <CardGlobal
           title="Ligações"
-          finishedTotal={props.totalCall3cx}
           icon={<BsFillTelephoneFill size={60} />}
           attendanceTotal={props.attendanceTotal3cx}
-          // finishedTotal="22"
-          loggedTotal={props.loggedTotal3cx}
+          pending={props.pending3cx}
+          finishedTotal={props.totalCall3cx}
+          // loggedTotal={props.loggedTotal3cx}
         />
         <CardGlobal
           title="Chats"
-          finishedTotal={props.totalCallWpp}
           icon={<IoLogoWhatsapp size={60} />}
           attendanceTotal={props.attendanceTotalWpp}
-          // finishedTotal="20"
-          loggedTotal={props.loggedTotalWpp}
+          pending={props.pendingWpp}
+          finishedTotal={props.totalCallWpp}
+          // loggedTotal={props.loggedTotalWpp}
         />
         <CardGlobal
           title="Acessos"
-          finishedTotal={props.totalSessionMsp}
           icon={<RiComputerFill size={60} />}
           attendanceTotal={props.attendanceTotalMsp}
-          // finishedTotal="25"
-          loggedTotal={props.loggedTotalMsp}
-          // loadingMspData={props.loadingMspData}
+          pending={props.pendingMsp}
+          finishedTotal={props.totalSessionMsp}
+          // loggedTotal={props.loggedTotalMsp}
         />
         <div className="dashGlobalImg">
           <img src={Logo} alt="Logo de dash" />
